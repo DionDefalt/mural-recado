@@ -1,0 +1,13 @@
+{
+  "name": "mural-recados",
+  "version": "1.0.0",
+  "description": "Um mural de recados full-stack com Node.js, Express e persistência em arquivo JSON.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mural de Recados</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Nunito:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="plank">
+    <h1 class="plank__title">Mural de Recados</h1>
+    <p class="plank__subtitle">Deixe um bilhete pra quem passar por aqui.</p>
+  </header>
+
+  <main class="board">
+    <form class="composer" id="composer">
+      <div class="composer__row">
+        <input
+          type="text"
+          id="autorInput"
+          class="composer__author"
+          placeholder="Seu nome (opcional)"
+          maxlength="30"
+          autocomplete="off"
+        />
+        <div class="composer__colors" id="colorPicker">
+          <button type="button" class="swatch swatch--amarelo is-active" data-cor="amarelo" aria-label="Amarelo"></button>
+          <button type="button" class="swatch swatch--azul" data-cor="azul" aria-label="Azul"></button>
+          <button type="button" class="swatch swatch--rosa" data-cor="rosa" aria-label="Rosa"></button>
+          <button type="button" class="swatch swatch--verde" data-cor="verde" aria-label="Verde"></button>
+        </div>
+      </div>
+      <textarea
+        id="mensagemInput"
+        class="composer__message"
+        placeholder="Escreva seu recado..."
+        maxlength="280"
+        rows="3"
+      ></textarea>
+      <div class="composer__row composer__row--footer">
+        <span class="composer__counter" id="charCounter">280 caracteres restantes</span>
+        <button type="submit" class="composer__pin-button">📌 Fixar recado</button>
+      </div>
+    </form>
+
+    <div class="corkboard" id="corkboard" aria-live="polite">
+      <p class="corkboard__empty" id="emptyState" hidden>
+        O mural está vazio. Seja o primeiro a deixar um recado!
+      </p>
+      <div class="corkboard__grid" id="notesGrid"></div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
